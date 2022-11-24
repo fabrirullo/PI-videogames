@@ -1,7 +1,7 @@
 import "./CreateVideogame.css";
 import React, { useState, useEffect } from "react";
 import { Link, } from "react-router-dom";
-import { postGame, getGenres } from "../../actions/actions";
+import { postGame, getGenres, getGames } from "../../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 //formulario validad con Javascript, sistema de errores
@@ -28,7 +28,11 @@ function validate(input) {
 //creo la funcion Creadora de VideoJuegos
 export default function Create() {
   const dispatch = useDispatch();
-//  const navigate = useNavigate();
+  useEffect(() => {
+    dispatch(getGenres());
+    dispatch(getGames());
+  }, [dispatch]);
+  //  const navigate = useNavigate();
   const genres = useSelector((state) => state.genres);
   const videogames = useSelector((state) => state.games);
 
@@ -53,6 +57,7 @@ export default function Create() {
     return plat;
   };
   const platform = getPlatforms();
+
 
   //---------------------------------------------
   //--------------HANDLES------------------------
@@ -119,9 +124,7 @@ export default function Create() {
     });
   }
 
-  useEffect(() => {
-    dispatch(getGenres());
-  }, [dispatch]);
+
 
   return (
     <div className="addCharacter">
