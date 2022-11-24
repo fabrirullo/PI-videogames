@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech&display=swap');
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../../img/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .logoLand {
+    margin-top: 100px;
+  }
+  
+  .Button{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    margin: 3rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+    }
+    .Button:hover{
+        background-color: red;
+        color: white;
+    }

@@ -1,0 +1,71 @@
+.card {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    margin: 13px;
+    background-color: #f0ce0ec2;
+    width: 17rem;
+    height: 20rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    opacity: 0;
+    animation: fadeInAnimation ease 2s 1 forwards;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 20px;
+    
+  }
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+.card h3 {
+  font-size: 22px;
+  color: white;
+}
+.imageCard {
+    width: 240px;
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(94, 10, 173, 0.2);
+  cursor:pointer;
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+/* Add some padding inside the card container */
+.container {
+  display: flex;
+  padding: 4px ;
+  border-radius: 5px 5px 0 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card:hover .container {
+    opacity: 1;
+  }
+
+.container span {
+  margin-inline: 10px;
+  padding-inline: 15px;
+}
