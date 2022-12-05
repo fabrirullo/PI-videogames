@@ -1,7 +1,7 @@
 import "./CreateVideogame.css";
 import React, { useState, useEffect } from "react";
 import { Link, } from "react-router-dom";
-import { postGame, getGenres, getGames } from "../../actions/actions";
+import { postGame, getGenres } from "../../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 //formulario validad con Javascript, sistema de errores
@@ -28,11 +28,7 @@ function validate(input) {
 //creo la funcion Creadora de VideoJuegos
 export default function Create() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getGenres());
-    dispatch(getGames());
-  }, [dispatch]);
-  //  const navigate = useNavigate();
+//  const navigate = useNavigate();
   const genres = useSelector((state) => state.genres);
   const videogames = useSelector((state) => state.games);
 
@@ -58,7 +54,6 @@ export default function Create() {
   };
   const platform = getPlatforms();
 
-
   //---------------------------------------------
   //--------------HANDLES------------------------
   function handleChange(e) {
@@ -78,8 +73,9 @@ export default function Create() {
   function handleGenre(e) {
     setInput({
       ...input,
-      genres: [...input.genres, e.target.value],
+      genres: [...input.genres, e.target.value], 
     });
+    
   }
 
   function handlePlataforms(e) {
@@ -124,16 +120,17 @@ export default function Create() {
     });
   }
 
-
+  useEffect(() => {
+    dispatch(getGenres());
+  }, [dispatch]);
 
   return (
     <div className="addCharacter">
-      <h1>Create New Videogame</h1>
       <form onSubmit={(e) => handleSubmit(e)} className="formulario">
         <div>
           <div>
             <div className="form_inputs">
-              <label>Name </label>
+              <label>Nombre </label>
               <input
                 className="inputs"
                 type="text"
@@ -144,7 +141,7 @@ export default function Create() {
               {errors.name && <p className="errorcito">{errors.name}</p>}
             </div>
             <div className="form_inputs">
-              <label>Description </label>
+              <label>Descripcion </label>
               <input
                 className="inputs"
                 type="text"
@@ -157,7 +154,7 @@ export default function Create() {
               )}
             </div>
             <div className="form_inputs">
-              <label>Image </label>
+              <label>Imagen </label>
               <input
                 className="inputs"
                 type="text"
@@ -168,7 +165,7 @@ export default function Create() {
               {errors.img && <p className="errorcito">{errors.img}</p>}
             </div>
             <div className="form_inputs">
-              <label>Release Date </label>
+              <label>Fecha de lanzamiento </label>
               <input
                 className="inputs"
                 type="date"
@@ -192,16 +189,18 @@ export default function Create() {
           </div>
           <div>
             <div className="custom-select">
+            <label>Genero </label>
               <select onChange={handleGenre} className="select-css">
                 {genres.map((e) => (
                   <option key={e.name} value={e.name}>
-                    {e.name}
+                    {e.name} 
                   </option>
                 ))}
               </select>
             </div>
             <li>{input.genres.map((el) => el).join(" - ")}</li>
             <div className="custom-select">
+            <label>Plataforma </label>
               <select onChange={handlePlataforms} className="select-css">
                 {platform.map((e) => (
                   <option key={e} value={e}>
@@ -215,17 +214,14 @@ export default function Create() {
         </div>
         <div id="divButtons">
           <button type="submit" className="add_button">
-            Create
+            Crear
           </button>
-          <Link to="/home">
-            <button className="add_button">Back</button>
-          </Link>
         </div>
       </form>
       <br />
       <br />
       <div className="conteiner remove">
-        <h2>Remove Platforms:</h2>
+        <h2>Eliminar Plataforma:</h2>
         {input.platforms.map((el) => (
           <div className="cardRemove" key={el}>
             <p> {el}</p>
@@ -234,8 +230,7 @@ export default function Create() {
             </button>
           </div>
         ))}
-        <h2>Remove Genres:</h2>
-
+        <h2>Eliminar Genero:</h2>
         {input.genres.map((el) => (
           <div className="cardRemove" key={el}>
             <p>{el}</p>
@@ -244,6 +239,11 @@ export default function Create() {
             </button>
           </div>
         ))}
+        <div>
+        <Link to="/home">
+            <button className="volver">Volver a Home</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

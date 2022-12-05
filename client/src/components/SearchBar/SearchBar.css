@@ -2,9 +2,9 @@
        font-family: "Bebas Neue", cursive;
      }
      .buscador {
-       padding: 6px;
+       padding: 7px;
        border: none;
-       margin-top: 8px;
+       margin-top: 1px;
        font-size: 17px;
      }
      
@@ -15,17 +15,18 @@
      
      #bt {
        cursor: pointer;
-       border-radius: 0 13px 13px 0;
-       margin-right: 16px;
-       width: 90px;
+       font-size: 25px;
+       border-radius: 0 0px 13px 0;
+       margin-right: 5rem;   
+       width: 60px;
+       height: 25%;
        transition-duration: 0.4s;
        font-weight: bold;
        background-color: transparent;
-       border: 1px solid whitesmoke;
        color: whitesmoke;
      }
      
      #bt:hover {
-       background-color: rgb(59, 26, 90);
-       color: whitesmoke;
+       background-color: rgba(59, 26, 90, 0);
+       color: #ACA92C;
      }

@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
       released: released || "no data provided",
       rating: rating || 0,
       platforms,
-      image: image ? image : "https://i.imgur.com/Xb3J9Cz.png", //imagen por defecto
+      image: image ? image : "https://images.unsplash.com/photo-1631896928983-2c94ea6f97e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", //imagen por defecto
     });
 
     videogameCreated.addGenre(genreDb);

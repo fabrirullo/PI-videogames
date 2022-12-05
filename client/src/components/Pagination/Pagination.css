@@ -2,6 +2,7 @@ ul {
     display: inline-block;
     padding: 0;
     margin: 10px;
+    
   }
   
   ul li {
@@ -15,6 +16,7 @@ ul {
     color: rgb(219, 219, 219);
     transition: background-color 0.3s;
     background-color: rgba(0, 0, 0, 0.431);
+    margin: 0 4px;
   }
   
   ul li a.number {
@@ -23,5 +25,5 @@ ul {
   }
   
   ul li a:hover:not(.number) {
-    background-color: rgba(80, 0, 155, 0.89);
+    background-color: #AA9F28;
   }

@@ -79,7 +79,7 @@ export default function Home() {
             handleClick(e);
           }}
         >
-          Recargar Juegos🔄
+         🔄 Recargar 🔄
         </button>
         <NavLink
           to="/create"

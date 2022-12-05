@@ -60,7 +60,7 @@ export default function Detail() {
       <div className="botonDetalle">
         <Link to="/home">
           <button id="landButton" className="btnD">
-            volver
+            Home
           </button>
         </Link>
       </div>

@@ -11,6 +11,8 @@
     animation: fadeInAnimation ease 2s 1 forwards;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border-radius: 20px;
+    font-family: 'Press Start 2P', cursive;
+
     
   }
   
@@ -24,7 +26,7 @@
     }
   }
 .card h3 {
-  font-size: 22px;
+  font-size: 20px;
   color: white;
 }
 .imageCard {
@@ -45,6 +47,7 @@
 /* Add some padding inside the card container */
 .container {
   display: flex;
+  font-size: 12px;
   padding: 4px ;
   border-radius: 5px 5px 0 0;
   height: 100%;
